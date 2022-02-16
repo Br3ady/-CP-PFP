@@ -52,9 +52,9 @@ class LSTM():
 class GCN(nn.Module):
     def __init__(self):
         super().__init__()
-        self.conv1 = GraphConv(dataset.num_features, 128) ###needs a bit of testing and research
+        self.conv1 = GATv2Conv(dataset.num_features, 128) ###needs a bit of testing and research
         self.pool1 = TopKPooling(128, ratio=2)
-        self.conv2 = GraphConv(128, 128)
+        self.conv2 = GATv2Conv(128, 128)
         self.pool2 = TopKPooling(128, ratio=2)
 
 
